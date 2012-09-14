@@ -1,24 +1,244 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1906" systemVersion="11A511" targetRuntime="iOS.CocoaTouch" nextObjectID="6" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12B19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="h5O-Qp-uCE">
     <dependencies>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="902"/>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
     </dependencies>
     <scenes>
+        <!--Circle View Controller - Move Pizza-->
+        <scene sceneID="Ymy-f3-nb1">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wL1-cr-pt8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="CTf-nQ-QVz" customClass="CircleViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ohR-an-CiQ">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="eating.png" id="APx-Gg-ZTY">
+                                <rect key="frame" x="66" y="-96" width="254" height="289"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" image="Pizza-transparent.png" id="1TS-42-LUV">
+                                <rect key="frame" x="102" y="142" width="116" height="116"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="W3k-oP-amR" id="fU2-8Y-z20"/>
+                                </connections>
+                            </imageView>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="QDW-TV-O0k">
+                                <rect key="frame" x="0.0" y="366" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <requiredContentSizeIdentifiers>
+                                    <string>ADBannerContentSizeLandscape</string>
+                                    <string>ADBannerContentSizePortrait</string>
+                                </requiredContentSizeIdentifiers>
+                            </adBannerView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.92637043399999996" blue="0.1241018114" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Move Pizza" id="DuG-aW-44b"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="pizzaSlice" destination="1TS-42-LUV" id="j4G-Ar-zFE"/>
+                    </connections>
+                </viewController>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="W3k-oP-amR">
+                    <connections>
+                        <action selector="handlePan:" destination="CTf-nQ-QVz" id="iHF-Hd-NbT"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1580" y="194"/>
+        </scene>
+        <!--Sending Data-->
+        <scene sceneID="QTN-3i-87v">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MfB-0z-V8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="gQD-Xw-4x1" customClass="SendingData" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gYA-Yo-Ei9">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="happy.png" id="9aW-ci-bZZ">
+                                <rect key="frame" x="0.0" y="100" width="200" height="289"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="N8d-VB-gRA">
+                                <rect key="frame" x="228" y="59" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Load">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loaddata:" destination="gQD-Xw-4x1" eventType="touchUpInside" id="ejh-9T-DJ4"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="LqA-vj-TQ8">
+                                <rect key="frame" x="85" y="20" width="215" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Intention" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="tDP-Hk-61p">
+                                <rect key="frame" x="10" y="25" width="67" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="ZYn-Zo-NzI">
+                                <rect key="frame" x="10" y="100" width="290" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="j0K-kx-DmA">
+                                <rect key="frame" x="148" y="59" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="savedata:" destination="gQD-Xw-4x1" eventType="touchDown" id="k1p-7a-Lft"/>
+                                </connections>
+                            </button>
+                            <webView contentMode="scaleToFill" id="hTX-QJ-JZR">
+                                <rect key="frame" x="0.0" y="135" width="320" height="144"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="33O-iN-GBg"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="field" destination="LqA-vj-TQ8" id="dMA-92-1ys"/>
+                        <outlet property="label" destination="ZYn-Zo-NzI" id="Kg1-Qc-tEn"/>
+                        <outlet property="webView" destination="hTX-QJ-JZR" id="X66-5C-uR4"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1075" y="-404"/>
+        </scene>
+        <!--View Controller - Check System-->
         <scene sceneID="5">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
                 <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="hungry.png" id="ujW-9Q-b3f">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="Frw-sk-2W2">
+                                <rect key="frame" x="82" y="112" width="157" height="191"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Swipe left or down" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="kIj-Gj-sWS">
+                                <rect key="frame" x="88" y="43" width="145" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="wpL-w6-PSC" id="mdZ-Le-WYf"/>
+                            <outletCollection property="gestureRecognizers" destination="7v6-Xd-gXs" id="iZb-R2-i1I"/>
+                        </connections>
                     </view>
+                    <navigationItem key="navigationItem" title="Check System" id="1c6-K6-fIY"/>
+                    <connections>
+                        <outlet property="imageview" destination="Frw-sk-2W2" id="PbV-lW-SeH"/>
+                    </connections>
                 </viewController>
+                <swipeGestureRecognizer direction="left" id="wpL-w6-PSC">
+                    <connections>
+                        <outlet property="delegate" destination="3" id="fqh-vv-lJG"/>
+                        <segue destination="CTf-nQ-QVz" kind="push" id="9EJ-IC-2gh"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="7v6-Xd-gXs">
+                    <connections>
+                        <outlet property="delegate" destination="3" id="ynl-qV-0jB"/>
+                        <segue destination="gQD-Xw-4x1" kind="push" id="aWM-Ao-Ep1"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="1075" y="194"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9R9-Vu-0Yx">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a0D-YB-pXR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="h5O-Qp-uCE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lZu-Bx-vRW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="Wfn-u4-zvo"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="549" y="194"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Pizza-transparent.png" width="116" height="116"/>
+        <image name="eating.png" width="320" height="480"/>
+        <image name="happy.png" width="320" height="480"/>
+        <image name="hungry.png" width="320" height="480"/>
+    </resources>
+    <classes>
+        <class className="CircleViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CircleViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="handlePan:" candidateClass="UIPanGestureRecognizer"/>
+                <relationship kind="outlet" name="pizzaSlice" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="SendingData" superclassName="ViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SendingData.h"/>
+            <relationships>
+                <relationship kind="action" name="loaddata:"/>
+                <relationship kind="action" name="savedata:"/>
+                <relationship kind="outlet" name="field" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="label" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="aBanner" candidateClass="ADBannerView"/>
+                <relationship kind="outlet" name="imageview" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

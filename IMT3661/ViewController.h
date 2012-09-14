@@ -7,7 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <iAd/iAd.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <ADBannerViewDelegate> {
+
+    IBOutlet UIImageView *imageview;
+
+
+    
+    ADBannerView *aBanner;
+}
+
+
+@property (nonatomic, retain) IBOutlet ADBannerView *aBanner;
+@property (nonatomic, assign) BOOL bannerIsVisible;
+
+
+
 
 @end
